@@ -29,12 +29,3 @@ RSpec.describe 'passenger show page' do
     end
   end
 end
-
-
-# User Story 2, Passenger Show Page
-# ​
-# As a visitor
-# When I visit a passengers show page
-# I see that passengers name
-# And I see a section of the page that displays all flight numbers of the flights for that passenger
-# All flight numbers are links to that flight’s show page
