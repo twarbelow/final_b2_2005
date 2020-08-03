@@ -1,5 +1,5 @@
 class FlightsController < ApplicationController
-  def show
-
+  def index
+    @flights = Flights.all
   end
 end
