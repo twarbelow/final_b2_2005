@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Passenger', type: :model do
+describe Passenger, type: :model do
   describe 'validations' do
     it { should validate_presence_of :name }
     it { should validate_presence_of :age }
@@ -8,6 +8,6 @@ describe 'Passenger', type: :model do
 
   describe 'relationships' do
     it { should have_many :passenger_flights }
-    it {should have_many(:flights).through(:passenger_flights)}
+    it { should have_many(:flights).through(:passenger_flights) }
   end
 end
