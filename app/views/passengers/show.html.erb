@@ -1,4 +1,14 @@
 <h1>Passenger: <%= @passenger.name %></h1>
+<h1>Fill in a valid flight number to add a flight:</h1>
+
+<center>
+  <%= form_tag "/passenger_flights/new", method: :post do %>
+    <%= label_tag :number %>
+    <%= text_field_tag "Flight Number"%>
+    <%= submit_tag 'Add Flight' %>
+  <% end %>
+</center>
+
 <section class = "flights">
   <h2>Flights for <%= @passenger.name %> </h2>
   <% @passenger.flights.each do |flight| %>
