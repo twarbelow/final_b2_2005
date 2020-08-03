@@ -257,6 +257,7 @@
           1,
           1,
           1,
+          1,
           null,
           1,
           null,
@@ -265,8 +266,47 @@
           null,
           null
         ]
+      },
+      "/Users/taija/turing/2mod/final/final_b2_2005/spec/models/passenger_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/taija/turing/2mod/final/final_b2_2005/app/models/passenger_flight.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/taija/turing/2mod/final/final_b2_2005/app/models/passenger.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1596468785
+    "timestamp": 1596469393
   }
 }
