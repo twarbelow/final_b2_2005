@@ -12,7 +12,7 @@ RSpec.describe 'flights show page' do
     penny = f1.passengers.create(name: "Penny", age: 2)
     oliver = f1.passengers.create(name: "Oliver", age: 9)
     jordan =f2.passengers.create(name: "Jordan", age: 31)
-    taijs = f2.passengers.create(name: "Taija", age: 29)
+    taija = f2.passengers.create(name: "Taija", age: 29)
     milja = f3.passengers.create(name: "Milja", age: 15)
     kylinna = f3.passengers.create(name: "Kylinna", age: 18)
 
@@ -26,12 +26,13 @@ RSpec.describe 'flights show page' do
       expect(page).to have_content("Departure Time: #{f1.time}")
       expect(page).to have_content("Departure Date: #{f1.date}")
       expect(page).to have_content("Passenger Manifest")
+    end
+    within "#flight-#{f1.id}-passengers" do
       expect(page).to have_content(penny.name)
       expect(page).to have_content(oliver.name)
     end
 
     within "#flight-#{f2.id}" do
-      expect(page).to have_content("Flight Information")
       expect(page).to have_content("Airline: #{f2.airline.name}")
       expect(page).to have_content("Flight Number: #{f2.number}")
       expect(page).to have_content("Departure City: #{f2.departure}")
@@ -39,12 +40,13 @@ RSpec.describe 'flights show page' do
       expect(page).to have_content("Departure Time: #{f2.time}")
       expect(page).to have_content("Departure Date: #{f2.date}")
       expect(page).to have_content("Passenger Manifest")
+    end
+    within "#flight-#{f2.id}-passengers" do
       expect(page).to have_content(jordan.name)
       expect(page).to have_content(taija.name)
     end
 
     within "#flight-#{f3.id}" do
-      expect(page).to have_content("Flight Information")
       expect(page).to have_content("Airline: #{f3.airline.name}")
       expect(page).to have_content("Flight Number: #{f3.number}")
       expect(page).to have_content("Departure City: #{f3.departure}")
@@ -52,6 +54,8 @@ RSpec.describe 'flights show page' do
       expect(page).to have_content("Departure Time: #{f3.time}")
       expect(page).to have_content("Departure Date: #{f3.date}")
       expect(page).to have_content("Passenger Manifest")
+    end
+    within "#flight-#{f3.id}-passengers" do
       expect(page).to have_content(milja.name)
       expect(page).to have_content(kylinna.name)
     end
