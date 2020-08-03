@@ -43,7 +43,7 @@ RSpec.describe 'passenger show page' do
     f2.passengers << kylinna
     f2.reload
 
-    visiit "/passengers/#{kylinna.id}"
+    visit "/passengers/#{kylinna.id}"
 
     within ".flights" do
       expect(page).to have_link(f1.number)
@@ -52,11 +52,11 @@ RSpec.describe 'passenger show page' do
 
     expect(page).to have_content("Fill in a valid flight number to add a flight:")
     fill_in 'Flight Number', with: f3.number
-    clich_button "Add Flight"
-
-    # f3.reload
+    click_button "Add Flight"
 
     expect(current_path).to eq("/passengers/#{kylinna.id}")
+
+    f3.reload
 
     within ".flights" do
       expect(page).to have_link(f1.number)
