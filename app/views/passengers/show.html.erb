@@ -2,9 +2,10 @@
 <h1>Fill in a valid flight number to add a flight:</h1>
 
 <center>
-  <%= form_tag "/passenger_flights/new", method: :post do %>
+  <%= form_tag "/passenger_flights/create", method: :post do %>
     <%= label_tag :number %>
     <%= text_field_tag "Flight Number"%>
+    <%= hidden_field_tag :passenger_id, @passenger.id%>
     <%= submit_tag 'Add Flight' %>
   <% end %>
 </center>
