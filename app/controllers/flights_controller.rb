@@ -1,5 +1,6 @@
 class FlightsController < ApplicationController
   def index
-    @flights = Flights.all
+    require 'pry'; binding.pry
+    @flights = Flight.all
   end
 end
