@@ -18,7 +18,7 @@ RSpec.describe 'flights show page' do
 
     visit '/flights'
 
-    within ".flight-#{f1.id}" do
+    within "#flight-#{f1.id}" do
       expect(page).to have_content("Flight Number: #{f1.number}")
       expect(page).to have_content("Airline: #{f1.airline}")
       expect(page).to have_content("Departure City: #{f1.departure}")
@@ -30,7 +30,7 @@ RSpec.describe 'flights show page' do
       expect(page).to have_content(oliver.name)
     end
 
-    within ".flight-#{f2.id}" do
+    within "#flight-#{f2.id}" do
       expect(page).to have_content("Flight Information")
       expect(page).to have_content("Airline: #{f2.airline}")
       expect(page).to have_content("Flight Number: #{f2.number}")
@@ -43,7 +43,7 @@ RSpec.describe 'flights show page' do
       expect(page).to have_content(taija.name)
     end
 
-    within ".flight-#{f3.id}" do
+    within "#flight-#{f3.id}" do
       expect(page).to have_content("Flight Information")
       expect(page).to have_content("Airline: #{f3.airline}")
       expect(page).to have_content("Flight Number: #{f3.number}")
