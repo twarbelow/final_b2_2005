@@ -1,0 +1,17 @@
+<h1>All Flights</h1>
+<% @flights.each do |flight| %>
+  <ul id = 'flight-<%=flight.id%>'>
+    <li>Flight Number: <%= flight.number %></li>
+    <li>Airline: <%= flight.airline.name  %></li>
+    <li>Departure City: <%= flight.departure %></li>
+    <li>Arrival City: <%= flight.arrival %></li>
+    <li>Departure Time: <%= flight.time %></li>
+    <li>Departure Date: <%= flight.date %></li>
+    <li>Passenger Manifest:</li>
+    <ol id = 'flight-<%=flight.id%>-passengers'>
+    <% flight.passengers.each do |passenger| %>
+      <li><%= passenger.name %></li>
+      <% end %>
+    </ol>
+  </ul>
+<% end %>
