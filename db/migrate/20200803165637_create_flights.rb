@@ -4,8 +4,8 @@ class CreateFlights < ActiveRecord::Migration[5.1]
       t.string :number
       t.string :departure
       t.string :arrival
-      t.time :string
-      t.date :string
+      t.string :time
+      t.string :date
       t.references :airline, foreign_key: true
     end
   end
